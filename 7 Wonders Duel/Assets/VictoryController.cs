@@ -19,7 +19,6 @@ public class VictoryController : MonoBehaviour
         playerTwo = GameObject.FindGameObjectWithTag("PlayerTwo").GetComponent<Player>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         MilitaryVictory();
@@ -27,13 +26,13 @@ public class VictoryController : MonoBehaviour
 
     private void MilitaryVictory()
     {
-        if (playerOne.MilitaryStrength - playerTwo.MilitaryStrength >= 7)
+        if (playerOne.MilitaryStrength - playerTwo.MilitaryStrength >= 8)
         {
             victoriousPlayer.text = "Player 1 won";
             victoryType.text = "Military Victory";
             ShowVictory();
         }
-        else if(playerTwo.MilitaryStrength - playerOne.MilitaryStrength >= 7)
+        else if(playerTwo.MilitaryStrength - playerOne.MilitaryStrength >= 8)
         {
             victoriousPlayer.text = "Player 2 won";
             victoryType.text = "Military Victory";

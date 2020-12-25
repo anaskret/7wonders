@@ -87,6 +87,16 @@ public class Player: MonoBehaviour
         }
     }
 
+    public void ChangeVictoryPoints(int number)
+    {
+        VictoryPoints += number;
+    }
+
+    public void ChangeCoins(int number)
+    {
+        Coins += number;
+    }
+
     public void AddCard(GameObject card)
     {
         Cards.Add(card);

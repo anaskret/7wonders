@@ -14,6 +14,7 @@ public class BoardController : MonoBehaviour
     [SerializeField] private Text glassText;
     [SerializeField] private Text papyrusText;
     [SerializeField] private Text textilesText;
+
     [SerializeField] private bool isPlayerOne;
     [SerializeField] private GameObject detailedBoard;
 
