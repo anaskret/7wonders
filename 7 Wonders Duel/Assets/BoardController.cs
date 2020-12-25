@@ -29,30 +29,25 @@ public class BoardController : MonoBehaviour
 
     private void Update()
     {
+        Player currentPlayer;
         if (isPlayerOne)
         {
-            coinText.text = playerOne.Coins.ToString();
-            vpText.text = playerOne.VictoryPoints.ToString();
-            woodText.text = playerOne.Wood.ToString();
-            oreText.text = playerOne.Ore.ToString();
-            clayText.text = playerOne.Clay.ToString();
-            stoneText.text = playerOne.Stone.ToString();
-            glassText.text = playerOne.Glass.ToString();
-            papyrusText.text = playerOne.Papyrus.ToString();
-            textilesText.text = playerOne.Textiles.ToString();
+            currentPlayer = playerOne;
         }
         else
         {
-            coinText.text = playerTwo.Coins.ToString();
-            vpText.text = playerTwo.VictoryPoints.ToString();
-            woodText.text = playerTwo.Wood.ToString();
-            oreText.text = playerTwo.Ore.ToString();
-            clayText.text = playerTwo.Clay.ToString();
-            stoneText.text = playerTwo.Stone.ToString();
-            glassText.text = playerTwo.Glass.ToString();
-            papyrusText.text = playerTwo.Papyrus.ToString();
-            textilesText.text = playerTwo.Textiles.ToString();
+            currentPlayer = playerTwo;
         }
+
+        coinText.text = currentPlayer.Coins.ToString();
+        vpText.text = currentPlayer.VictoryPoints.ToString();
+        woodText.text = currentPlayer.Wood.ToString();
+        oreText.text = currentPlayer.Ore.ToString();
+        clayText.text = currentPlayer.Clay.ToString();
+        stoneText.text = currentPlayer.Stone.ToString();
+        glassText.text = currentPlayer.Glass.ToString();
+        papyrusText.text = currentPlayer.Papyrus.ToString();
+        textilesText.text = currentPlayer.Textiles.ToString();
     }
 
     public void ShowDetails()

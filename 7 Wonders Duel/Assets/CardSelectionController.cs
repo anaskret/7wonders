@@ -19,6 +19,8 @@ public class CardSelectionController : MonoBehaviour
 
     private bool isPlayerOneTurn;
 
+    private int orderInLayer;
+
     private void Start()
     {
         playerOne = GameObject.FindGameObjectWithTag("PlayerOne").GetComponent<Player>();
@@ -62,7 +64,10 @@ public class CardSelectionController : MonoBehaviour
         card.transform.localScale = new Vector3(1.5f, 2f);
         gameObject.transform.localScale = new Vector3(0.65f, 0.55f);
         gameObject.transform.position = new Vector3(0.7544492f, 0.8872917f);
-        card.GetComponent<Renderer>().sortingOrder = 4;
+        orderInLayer = card.GetComponent<Renderer>().sortingOrder;
+        card.GetComponent<Renderer>().sortingOrder = 8;
+        /*card.GetComponentInChildren<Canvas>().sortingOrder = 9;
+        card.GetComponent<SpriteRenderer>().sortingOrder = 9;*/
 
         buyText.text = card.GetComponent<CardController>().CalculateCost().ToString();
         sellText.text = (currentPlayer.NumberOfYellowCards() + 2).ToString();
@@ -120,7 +125,9 @@ public class CardSelectionController : MonoBehaviour
         }
 
         card.GetComponent<CardController>().MoveCardBack();
-        card.GetComponent<Renderer>().sortingOrder = 0;
+        card.GetComponent<Renderer>().sortingOrder = orderInLayer;
+        /*card.GetComponentInChildren<Canvas>().sortingOrder = orderInLayer+1;
+        card.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer+1;*/
         gameObject.SetActive(false);
     }
 }

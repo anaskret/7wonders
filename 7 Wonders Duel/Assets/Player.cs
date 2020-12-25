@@ -18,8 +18,8 @@ public class Player: MonoBehaviour
     public List<GameObject> WonderCards { get; private set; } = new List<GameObject>();
     public List<GameObject> Cards { get; private set; } = new List<GameObject>();
 
-    public List<string> ScienceTokens { get; private set; } = new List<string>();
-    public List<string> ChainingTokens { get; private set; } = new List<string>();
+    public List<int> ScienceTokens { get; private set; } = new List<int>();
+    public List<int> ChainingTokens { get; private set; } = new List<int>();
 
     public GameObject[] wonderCardsPositions;
 
@@ -82,6 +82,14 @@ public class Player: MonoBehaviour
                     break;
                 case "textiles":
                     Textiles += resource.Value;
+                    break;
+                case "scienceToken":
+                    ScienceTokens.Add(resource.Value);
+                    //if duplicate...
+                    break;
+                case "chainingToken":
+                    ChainingTokens.Add(resource.Value);
+                    //if duplicate...
                     break;
             }
         }

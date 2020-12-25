@@ -1409,6 +1409,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1478,6 +1488,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -2117,6 +2137,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2181,6 +2211,21 @@ PrefabInstance:
         type: 3}
       propertyPath: wood
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardColor
+      value: grey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
@@ -2921,6 +2966,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2980,6 +3035,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -3608,10 +3673,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -3672,6 +3742,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardColor
+      value: blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
@@ -4064,6 +4149,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -4078,6 +4168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -4138,6 +4233,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -5367,6 +5477,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5426,6 +5546,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardColor
+      value: yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
@@ -5634,7 +5769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &724029796
 Transform:
   m_ObjectHideFlags: 0
@@ -5888,6 +6023,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5960,13 +6105,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: cardColor
+      value: brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: cardOreCost
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: cardCoinsCost
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
@@ -6025,6 +6185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -6039,6 +6204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -6099,6 +6269,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -6865,6 +7050,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6924,6 +7119,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardColor
+      value: brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -7383,6 +7593,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -7442,6 +7662,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardColor
+      value: red
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
@@ -7515,6 +7750,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -7529,6 +7769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -7589,6 +7834,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -8517,6 +8777,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -8531,6 +8796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -8591,6 +8861,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -9677,6 +9962,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -9691,6 +9981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -9751,6 +10046,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -11394,6 +11704,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -11408,6 +11723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -11468,6 +11788,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -11824,6 +12159,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -11838,6 +12178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -11898,6 +12243,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -12377,6 +12737,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -12436,6 +12806,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -12604,6 +12984,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -12663,6 +13053,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -12805,6 +13205,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -12869,6 +13279,21 @@ PrefabInstance:
         type: 3}
       propertyPath: coins
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardColor
+      value: green
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -13507,6 +13932,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_Color.b
@@ -13521,6 +13951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -13581,6 +14016,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: isBackToFront
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -14853,6 +15303,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724029796}
     m_Modifications:
+    - target: {fileID: 319770150093822506, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915466123803822752, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: m_RootOrder
@@ -14912,6 +15372,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardColor
+      value: grey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}

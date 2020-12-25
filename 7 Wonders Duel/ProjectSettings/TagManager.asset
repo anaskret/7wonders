@@ -7,6 +7,7 @@ TagManager:
   - PlayerOne
   - PlayerTwo
   - ConflictToken
+  - CardBack
   layers:
   - Default
   - TransparentFX
