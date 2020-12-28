@@ -149,7 +149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &44999103
 GameObject:
@@ -817,7 +817,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181174754
 GameObject:
@@ -1364,10 +1364,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.8739634, y: 0.58503807, z: -27.207031}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 607565976}
+  m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249580138
 GameObject:
@@ -1497,6 +1496,11 @@ PrefabInstance:
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
@@ -2226,6 +2230,16 @@ PrefabInstance:
         type: 3}
       propertyPath: chainingToken
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: militaryStrength
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
@@ -3048,6 +3062,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: coveringCards.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3184,7 +3203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &478672419
 GameObject:
@@ -3758,6 +3777,11 @@ PrefabInstance:
       propertyPath: chainingToken
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
 --- !u!1 &505294642
@@ -3975,7 +3999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -4251,6 +4275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: coveringCards.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4480,6 +4509,7 @@ Transform:
   m_Children:
   - {fileID: 1811068596}
   - {fileID: 1618672468}
+  - {fileID: 607565976}
   - {fileID: 247834075}
   - {fileID: 822371079}
   - {fileID: 515754664}
@@ -4960,13 +4990,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607565974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.69, y: -1.07, z: 324.0293}
+  m_LocalPosition: {x: -0.1839633, y: -0.484962, z: 296.82227}
   m_LocalScale: {x: 2.4205608, y: 5.096336, z: 1}
   m_Children:
   - {fileID: 325890388}
   - {fileID: 843512921}
-  m_Father: {fileID: 247834075}
-  m_RootOrder: 0
+  m_Father: {fileID: 559977115}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &607565977
 MonoBehaviour:
@@ -4990,8 +5020,7 @@ MonoBehaviour:
   papyrusText: {fileID: 859506686}
   textilesText: {fileID: 145224673}
   isPlayerOne: 1
-  detailedBoard: {fileID: 3545300668530671769, guid: dab71a659bfc584448fe9a90cf7f0838,
-    type: 3}
+  detailedBoard: {fileID: 1807140463}
 --- !u!4 &609095837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4558908145467520081, guid: 1af28d193878aa8478346bbc0215f90f,
@@ -5138,7 +5167,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649307469
 GameObject:
@@ -5562,6 +5591,11 @@ PrefabInstance:
       propertyPath: chainingToken
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
 --- !u!1 &708112171
@@ -5670,7 +5704,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &722481704
 GameObject:
@@ -5769,7 +5803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &724029796
 Transform:
   m_ObjectHideFlags: 0
@@ -5802,7 +5836,7 @@ Transform:
   - {fileID: 932415115}
   - {fileID: 2034161491}
   m_Father: {fileID: 559977115}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &725493515
 GameObject:
@@ -6128,6 +6162,11 @@ PrefabInstance:
       propertyPath: chainingToken
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
 --- !u!1 &822371077
@@ -6176,7 +6215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &829635184
 PrefabInstance:
@@ -6284,6 +6323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isBackToFront
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -6870,7 +6914,7 @@ RectTransform:
   - {fileID: 2132431448}
   - {fileID: 1745724396}
   m_Father: {fileID: 559977115}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7133,6 +7177,11 @@ PrefabInstance:
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
@@ -7678,6 +7727,11 @@ PrefabInstance:
       propertyPath: chainingToken
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1af28d193878aa8478346bbc0215f90f, type: 3}
 --- !u!1 &1042442144
@@ -7849,6 +7903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isBackToFront
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -8130,7 +8189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1200082418
 GameObject:
@@ -8320,7 +8379,7 @@ Transform:
   - {fileID: 1484165917}
   - {fileID: 1799830129}
   m_Father: {fileID: 559977115}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232133256
 GameObject:
@@ -8572,7 +8631,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 559977115}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330982141
 GameObject:
@@ -8876,6 +8935,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isBackToFront
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -10064,6 +10128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: coveringCards.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -10926,7 +10995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1618672468
 Transform:
   m_ObjectHideFlags: 0
@@ -11806,6 +11875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: coveringCards.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -12261,6 +12335,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: coveringCards.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -12569,6 +12648,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
+--- !u!1 &1807140463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3545300668530671769, guid: dab71a659bfc584448fe9a90cf7f0838,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843965571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1811068595
 GameObject:
   m_ObjectHideFlags: 0
@@ -12819,6 +12904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: coveringCards.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -12869,6 +12959,85 @@ Transform:
   m_Father: {fileID: 301925912}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1843965571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3545300668530671769, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_Name
+      value: DetailedPlayerBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545300668530671769, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328098651108543426, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6565511
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13462913
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712704275640097084, guid: dab71a659bfc584448fe9a90cf7f0838,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dab71a659bfc584448fe9a90cf7f0838, type: 3}
 --- !u!1 &1846042181
 GameObject:
   m_ObjectHideFlags: 0
@@ -13062,6 +13231,11 @@ PrefabInstance:
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
@@ -13277,6 +13451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: wood
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: coins
       value: 0
       objectReference: {fileID: 0}
@@ -13293,6 +13472,16 @@ PrefabInstance:
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: victoryPoints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
@@ -14031,6 +14220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isBackToFront
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
@@ -15002,6 +15196,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 225054614}
     m_Modifications:
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: coins
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: scienceToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: victoryPoints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: cardChainingCost
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8274676551971889722, guid: 67d165dba2d8657458c6ff6073a94781,
         type: 3}
       propertyPath: m_Pivot.x
@@ -15386,6 +15605,11 @@ PrefabInstance:
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
       propertyPath: chainingToken
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
+      propertyPath: cardChainingCost
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,

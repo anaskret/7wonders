@@ -3,42 +3,192 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WonderCardController : CardModel
+public class CardModel : MonoBehaviour
 {
-    public bool isBuilt;
+    [SerializeField] protected int coins;
+    [SerializeField] protected int victoryPoints;
+    [SerializeField] protected int militaryStrength;
+    [SerializeField] protected int wood;
+    [SerializeField] protected int ore;
+    [SerializeField] protected int clay;
+    [SerializeField] protected int stone;
+    [SerializeField] protected int glass;
+    [SerializeField] protected int papyrus;
+    [SerializeField] protected int textiles;
 
-    [SerializeField] private GameObject checkmark;
-    [SerializeField] private GameObject cross;
+    [SerializeField] protected int scienceToken;
+    [SerializeField] protected int chainingToken;
 
-    public GameObject cardUsedToBuild;
+    [SerializeField] protected int cardCoinsCost;
+    [SerializeField] protected int cardWoodCost;
+    [SerializeField] protected int cardOreCost;
+    [SerializeField] protected int cardClayCost;
+    [SerializeField] protected int cardStoneCost;
+    [SerializeField] protected int cardGlassCost;
+    [SerializeField] protected int cardPapyrusCost;
+    [SerializeField] protected int cardTextilesCost;
+    [SerializeField] protected int cardChainingCost;
 
-    public void WonderSelected()
+    [SerializeField] protected GameObject coinPrefab;
+    [SerializeField] protected GameObject woodPrefab;
+    [SerializeField] protected GameObject orePrefab;
+    [SerializeField] protected GameObject clayPrefab;
+    [SerializeField] protected GameObject stonePrefab;
+    [SerializeField] protected GameObject glassPrefab;
+    [SerializeField] protected GameObject papyrusPrefab;
+    [SerializeField] protected GameObject textilesPrefab;
+    [SerializeField] protected GameObject chainingTokenPrefab;
+    [SerializeField] protected GameObject scienceTokenPrefab;
+    [SerializeField] protected GameObject victoryPointsPrefab;
+    [SerializeField] protected GameObject militaryStrengthPrefab;
+
+    protected Player playerOne;
+    protected Player playerTwo;
+
+    protected Dictionary<string, int> resources = new Dictionary<string, int>();
+
+    [SerializeField] protected GameObject[] resourcePositions;
+    [SerializeField] private GameObject chainingTokenPosition;
+
+    [SerializeField] protected GameObject[] costPositons;
+
+    [SerializeField] protected bool isWonder;
+
+    protected virtual void Start()
     {
-        if (WonderSelectionTurn.PlayerTurn == 1)
+        playerOne = GameObject.FindGameObjectWithTag("PlayerOne").GetComponent<Player>();
+        playerTwo = GameObject.FindGameObjectWithTag("PlayerTwo").GetComponent<Player>();
+
+        CardSetup();
+    }
+
+    protected void AddResourcesToDictionary()
+    {
+        if (coins > 0)
         {
-            playerOne.AddWonderCard(gameObject);
-            WonderSelectionTurn.TurnChange();
+            resources.Add(nameof(coins), coins);
+        }
+        if (victoryPoints > 0)
+        {
+            resources.Add(nameof(victoryPoints), victoryPoints);
+        }
+        if (militaryStrength > 0)
+        {
+            resources.Add(nameof(militaryStrength), militaryStrength);
+        }
+        if (wood > 0)
+        {
+            resources.Add(nameof(wood), wood);
+        }
+        if (ore > 0)
+        {
+            resources.Add(nameof(ore), ore);
+        }
+        if (clay > 0)
+        {
+            resources.Add(nameof(clay), clay);
+        }
+        if (glass > 0)
+        {
+            resources.Add(nameof(glass), glass);
+        }
+        if (papyrus > 0)
+        {
+            resources.Add(nameof(papyrus), papyrus);
+        }
+        if (textiles > 0)
+        {
+            resources.Add(nameof(textiles), textiles);
+        }
+        if (scienceToken > -1 && scienceToken < 7)
+        {
+            resources.Add(nameof(scienceToken), scienceToken);
+        }
+        if (chainingToken > -1 && chainingToken < 7)
+        {
+            resources.Add(nameof(chainingToken), chainingToken);
+        }
+    }
+
+    public int CalculateCost()
+    {
+        Player player;
+        Player opponent;
+        if (GameController.IsPlayerOneTurn)
+        {
+            player = playerOne;
+            opponent = playerTwo;
         }
         else
         {
-            playerTwo.AddWonderCard(gameObject);
-            WonderSelectionTurn.TurnChange();
+            player = playerTwo;
+            opponent = playerOne;
         }
+
+        if (player.ChainingTokens.Contains(cardChainingCost))
+        {
+            return 0;
+        }
+
+        var cost = cardCoinsCost;
+
+        if (cardWoodCost > player.Wood)
+        {
+            cost += ResourceCost(cardWoodCost, player.Wood, opponent.Wood);
+        }
+        if (cardOreCost > player.Ore)
+        {
+            cost += ResourceCost(cardOreCost, player.Ore, opponent.Ore);
+        }
+        if (cardClayCost > player.Clay)
+        {
+            cost += ResourceCost(cardClayCost, player.Clay, opponent.Clay);
+        }
+        if (cardStoneCost > player.Stone)
+        {
+            cost += ResourceCost(cardStoneCost, player.Stone, opponent.Stone);
+        }
+        if (cardGlassCost > player.Glass)
+        {
+            cost += ResourceCost(cardClayCost, player.Clay, opponent.Clay);
+        }
+        if (cardPapyrusCost > player.Papyrus)
+        {
+            cost += ResourceCost(cardPapyrusCost, player.Papyrus, opponent.Papyrus);
+        }
+        if (cardTextilesCost > player.Textiles)
+        {
+            cost += ResourceCost(cardTextilesCost, player.Textiles, opponent.Textiles);
+        }
+
+        return cost;
     }
 
-    public void Build(Player player)
+    protected int ResourceCost(int resource, int playerResources, int opponentResources)
     {
-        player.AddResources(resources);
-        player.SpendCoins(CalculateCost());
-        isBuilt = true;
-        GameController.NumberOfWonders++;
+        var cost = 0;
+        cost += (2 * (resource - playerResources)) + opponentResources;
 
-
-        checkmark.SetActive(true);
+        return cost;
     }
-    protected override void CardSetup()
+
+    protected string firstResource;
+    protected string secondResource;
+    protected string thirdResource;
+
+    protected string firstCost;
+    protected string secondCost;
+    protected string thirdCost;
+
+    protected List<Canvas> costCanvases = new List<Canvas>();
+    protected List<SpriteRenderer> costSprites = new List<SpriteRenderer>();
+
+    protected List<Canvas> resourceCanvases = new List<Canvas>();
+    protected List<SpriteRenderer> resourceSprites = new List<SpriteRenderer>();
+
+    protected virtual void CardSetup()
     {
-        Canvas renderer = gameObject.GetComponentInParent<Canvas>();
+        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
 
         foreach (var cost in costPositons)
         {
@@ -115,11 +265,20 @@ public class WonderCardController : CardModel
                 ChangeLayer(renderer, prefab, false);
             }
         }
-
+        
 
         foreach (var resource in resourcePositions)
         {
-            if ((scienceToken > -1 && scienceToken < 7) && !IsSetup(nameof(scienceToken)))
+            if ((chainingToken > -1 && chainingToken < 7) && !IsSetup(nameof(chainingToken)))
+            {
+                var prefab = Instantiate(chainingTokenPrefab, chainingTokenPosition.transform.position, chainingTokenPosition.transform.rotation);
+                prefab.transform.parent = gameObject.transform;
+                AssignResourceName(nameof(chainingToken));
+                prefab.GetComponentInChildren<Text>().text = chainingToken.ToString();
+
+                ChangeLayer(renderer, prefab, true);
+            }
+            else if ((scienceToken > -1 && scienceToken < 7) && !IsSetup(nameof(scienceToken)))
             {
                 var prefab = Instantiate(scienceTokenPrefab, resource.transform.position, resource.transform.rotation);
                 prefab.transform.parent = gameObject.transform;
@@ -220,15 +379,60 @@ public class WonderCardController : CardModel
             }
         }
     }
+    protected bool IsSetup(string name)
+    {
+        if (name == firstResource || name == secondResource || name == thirdResource)
+        {
+            return true;
+        }
 
-    protected void ChangeLayer(Canvas renderer, GameObject prefab, bool isResource)
+        if (name == firstCost || name == secondCost || name == thirdCost)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    protected void AssignCostName(string name)
+    {
+        if (firstCost == null)
+        {
+            firstCost = name;
+        }
+        else if (secondCost == null)
+        {
+            secondCost = name;
+        }
+        else if (thirdCost == null)
+        {
+            thirdCost = name;
+        }
+    }
+
+    protected void AssignResourceName(string name)
+    {
+        if (firstResource == null)
+        {
+            firstResource = name;
+        }
+        else if (secondResource == null)
+        {
+            secondResource = name;
+        }
+        else if (thirdResource == null)
+        {
+            thirdResource = name;
+        }
+    }
+
+    protected void ChangeLayer(SpriteRenderer renderer, GameObject prefab, bool isResource)
     {
         var canvas = prefab.GetComponentInChildren<Canvas>();
-        canvas.overrideSorting = true; 
-        canvas.sortingOrder = renderer.sortingOrder + 2;
+        canvas.sortingOrder = renderer.sortingOrder + 1;
 
         var sprite = prefab.GetComponent<SpriteRenderer>();
-        sprite.sortingOrder = renderer.sortingOrder + 2;
+        sprite.sortingOrder = renderer.sortingOrder + 1;
 
         if (isResource)
         {
@@ -242,27 +446,27 @@ public class WonderCardController : CardModel
         }
     }
 
-    public override void ChangeLayerWithCard()
+    public virtual void ChangeLayerWithCard()
     {
-        var renderer = gameObject.GetComponentInChildren<Canvas>();
+        var renderer = gameObject.GetComponent<SpriteRenderer>();
 
         foreach (var canvas in costCanvases)
         {
             canvas.overrideSorting = true;
-            canvas.sortingOrder = renderer.sortingOrder + 3;
+            canvas.sortingOrder = renderer.sortingOrder + 1;
         }
         foreach (var sprite in costSprites)
         {
-            sprite.sortingOrder = renderer.sortingOrder + 2;
+            sprite.sortingOrder = renderer.sortingOrder + 1;
         }
         foreach (var canvas in resourceCanvases)
         {
             canvas.overrideSorting = true;
-            canvas.sortingOrder = renderer.sortingOrder + 3;
+            canvas.sortingOrder = renderer.sortingOrder + 1;
         }
         foreach (var sprite in resourceSprites)
         {
-            sprite.sortingOrder = renderer.sortingOrder + 2;
+            sprite.sortingOrder = renderer.sortingOrder + 1;
         }
     }
 }

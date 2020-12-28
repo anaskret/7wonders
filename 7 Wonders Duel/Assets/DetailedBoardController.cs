@@ -7,8 +7,12 @@ public class DetailedBoardController : MonoBehaviour
     [SerializeField] private GameObject[] wonderPositions;
     [SerializeField] private GameObject[] cardPositions;
 
+    Player player;
+
     public void ShowBoard(Player player)
     {
+        this.player = player;
+
         var index = 0;
         foreach(var position in wonderPositions)
         {
@@ -28,7 +32,7 @@ public class DetailedBoardController : MonoBehaviour
         }
     }
 
-    public void HideBoard(Player player)
+    public void HideBoard()
     {
         var index = 0;
         foreach (var position in wonderPositions)
@@ -39,13 +43,18 @@ public class DetailedBoardController : MonoBehaviour
         index = 0;
 
 
-        if (player.Cards.Count <= 0)
-            return;
 
+        if (player.Cards.Count <= 0)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         foreach (var position in cardPositions)
         {
             player.ChangeCardPosition(-100, -100, player.Cards[index]);
             index++;
         }
+
+        gameObject.SetActive(false);
     }
 }

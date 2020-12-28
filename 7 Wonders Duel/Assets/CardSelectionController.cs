@@ -64,25 +64,35 @@ public class CardSelectionController : MonoBehaviour
         card.transform.localScale = new Vector3(1.5f, 2f);
         gameObject.transform.localScale = new Vector3(0.65f, 0.55f);
         gameObject.transform.position = new Vector3(0.7544492f, 0.8872917f);
-        orderInLayer = card.GetComponent<Renderer>().sortingOrder;
-        card.GetComponent<Renderer>().sortingOrder = 8;
-        /*card.GetComponentInChildren<Canvas>().sortingOrder = 9;
-        card.GetComponent<SpriteRenderer>().sortingOrder = 9;*/
 
-        buyText.text = card.GetComponent<CardController>().CalculateCost().ToString();
+        var cardRenderer = card.GetComponent<Renderer>();
+        var cardController = card.GetComponent<CardController>();
+        orderInLayer = cardRenderer.sortingOrder;
+        cardRenderer.sortingOrder = 10;
+
+        cardController.ChangeLayerWithCard();
+
+        buyText.text = cardController.CalculateCost().ToString();
         sellText.text = (currentPlayer.NumberOfYellowCards() + 2).ToString();
 
         var index = 0;
         foreach(var text in buildWonders)
         {
-            text.text = currentPlayer.CalculateWonderCost(index, opponent).ToString();
-        }
+            var wonder = currentPlayer.WonderCards[index];
+            var controller = wonder.GetComponent<WonderCardController>();
 
+            wonder.transform.GetComponentInChildren<Renderer>().sortingOrder = 10;
+            controller.ChangeLayerWithCard();
+            text.text = controller.CalculateCost().ToString();
+            index++;
+        }
+        index = 0;
 
         foreach (var point in points)
         {
-            currentPlayer.ChangeCardPosition(point.transform.position.x, point.transform.position.y, currentPlayer.WonderCards[index]);
-            currentPlayer.WonderCards[index].transform.GetComponentInChildren<Renderer>().sortingOrder = 4;
+            var wonder = currentPlayer.WonderCards[index];
+            currentPlayer.ChangeCardPosition(point.transform.position.x, point.transform.position.y, wonder);
+            
             index++;
         }
     }
@@ -106,9 +116,20 @@ public class CardSelectionController : MonoBehaviour
         currentPlayer.MoveWondersToBoard();
     }
 
-    public void WonderBuild()
+    public void WonderBuild(int index)
     {
-        //finish building
+        var wonder = currentPlayer.WonderCards[index];
+        var controller = wonder.GetComponent<WonderCardController>();
+
+        card.GetComponent<CardController>().Build();
+
+        GameController.Wonders.Remove(wonder);
+        controller.Build(currentPlayer);
+
+        controller.cardUsedToBuild = card;
+
+        card.transform.position = new Vector3(100, 100);
+        
 
         gameObject.SetActive(false);
         currentPlayer.MoveWondersToBoard();
@@ -116,18 +137,13 @@ public class CardSelectionController : MonoBehaviour
 
     public void HideWindow()
     {
-        var index = 0;
-        foreach (var point in points)
-        {
-            currentPlayer.ChangeCardPosition(currentPlayer.wonderCardsPositions[index].transform.position.x, currentPlayer.wonderCardsPositions[index].transform.position.y, currentPlayer.WonderCards[index]);
-            currentPlayer.WonderCards[index].transform.GetComponentInChildren<Renderer>().sortingOrder = 3;
-            index++;
-        }
+        currentPlayer.MoveWondersToBoard();
 
-        card.GetComponent<CardController>().MoveCardBack();
+        var cardController = card.GetComponent<CardController>();
+
+        cardController.MoveCardBack();
         card.GetComponent<Renderer>().sortingOrder = orderInLayer;
-        /*card.GetComponentInChildren<Canvas>().sortingOrder = orderInLayer+1;
-        card.GetComponentInChildren<SpriteRenderer>().sortingOrder = orderInLayer+1;*/
+        cardController.ChangeLayerWithCard();
         gameObject.SetActive(false);
     }
 }

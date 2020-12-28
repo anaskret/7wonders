@@ -53,5 +53,13 @@ public class BoardController : MonoBehaviour
     public void ShowDetails()
     {
         detailedBoard.SetActive(true);
+        if (isPlayerOne)
+        {
+            detailedBoard.GetComponent<DetailedBoardController>().ShowBoard(playerOne);
+        }
+        else
+        {
+            detailedBoard.GetComponent<DetailedBoardController>().ShowBoard(playerTwo);
+        }
     }
 }

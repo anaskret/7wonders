@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 6774824258357600329}
   - component: {fileID: 5911163219122646424}
   m_Layer: 0
-  m_Name: Build
+  m_Name: Build 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ RectTransform:
   m_Children:
   - {fileID: 1041975521178271564}
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -196,7 +196,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6774824258357600329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8608282104771217314}
+        m_MethodName: WonderBuild
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1241368001410398311
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +380,7 @@ GameObject:
   - component: {fileID: 1359653011716938562}
   - component: {fileID: 8143555533160217182}
   m_Layer: 0
-  m_Name: BuildCost (2)
+  m_Name: BuildCost 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +398,7 @@ RectTransform:
   m_LocalScale: {x: 0.0125, y: 0.0196875, z: 1}
   m_Children: []
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -628,14 +639,14 @@ RectTransform:
   - {fileID: 7858011488147548999}
   - {fileID: 7202080696648902827}
   - {fileID: 4424844645799807483}
+  - {fileID: 4468307388049365295}
+  - {fileID: 6595107271159357190}
+  - {fileID: 9141364443124149898}
+  - {fileID: 654344388115348120}
   - {fileID: 991071014652403586}
   - {fileID: 6254975645667968579}
   - {fileID: 3460010018030456123}
   - {fileID: 2803403067641360638}
-  - {fileID: 9141364443124149898}
-  - {fileID: 654344388115348120}
-  - {fileID: 4468307388049365295}
-  - {fileID: 6595107271159357190}
   - {fileID: 2556126681323329332}
   - {fileID: 8608390630873090310}
   - {fileID: 652537347211856540}
@@ -877,7 +888,7 @@ GameObject:
   - component: {fileID: 2262677671659297491}
   - component: {fileID: 4001722260344895550}
   m_Layer: 0
-  m_Name: BuildCost (1)
+  m_Name: BuildCost 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -895,7 +906,7 @@ RectTransform:
   m_LocalScale: {x: 0.0125, y: 0.0196875, z: 1}
   m_Children: []
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1220,7 +1231,7 @@ GameObject:
   - component: {fileID: 2545977653864690353}
   - component: {fileID: 3943576463241315523}
   m_Layer: 0
-  m_Name: Build (2)
+  m_Name: Build 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,7 +1250,7 @@ RectTransform:
   m_Children:
   - {fileID: 5518200077184774646}
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1325,7 +1336,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2545977653864690353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8608282104771217314}
+        m_MethodName: WonderBuild
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5215486403381621215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1402,11 @@ MonoBehaviour:
   - {fileID: 5695685926668612842}
   buyText: {fileID: 669848858494133889}
   sellText: {fileID: 778003063450461465}
-  buildWonders: []
+  buildWonders:
+  - {fileID: 3654693314399128010}
+  - {fileID: 8143555533160217182}
+  - {fileID: 6634036182154764637}
+  - {fileID: 4001722260344895550}
 --- !u!1 &5695685926668612842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1645,7 @@ GameObject:
   - component: {fileID: 2997388528472151792}
   - component: {fileID: 3654693314399128010}
   m_Layer: 0
-  m_Name: BuildCost (3)
+  m_Name: BuildCost 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1637,7 +1663,7 @@ RectTransform:
   m_LocalScale: {x: 0.0125, y: 0.0196875, z: 1}
   m_Children: []
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 11
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1698,7 +1724,7 @@ GameObject:
   - component: {fileID: 811546913675081528}
   - component: {fileID: 4874448117938547243}
   m_Layer: 0
-  m_Name: Build (3)
+  m_Name: Build 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1717,7 +1743,7 @@ RectTransform:
   m_Children:
   - {fileID: 3422241941813822492}
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1803,7 +1829,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 811546913675081528}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8608282104771217314}
+        m_MethodName: WonderBuild
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7389445687329864874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,7 +2082,7 @@ GameObject:
   - component: {fileID: 2714618585264719632}
   - component: {fileID: 6634036182154764637}
   m_Layer: 0
-  m_Name: BuildCost
+  m_Name: BuildCost 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2063,7 +2100,7 @@ RectTransform:
   m_LocalScale: {x: 0.0125, y: 0.0196875, z: 1}
   m_Children: []
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2254,7 +2291,7 @@ GameObject:
   - component: {fileID: 5034574194361216347}
   - component: {fileID: 2750466678239164744}
   m_Layer: 0
-  m_Name: Build (1)
+  m_Name: Build 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2273,7 +2310,7 @@ RectTransform:
   m_Children:
   - {fileID: 657251678899280569}
   m_Father: {fileID: 1731017726885464606}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2359,7 +2396,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5034574194361216347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8608282104771217314}
+        m_MethodName: WonderBuild
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8836172162853858795
 GameObject:
   m_ObjectHideFlags: 0

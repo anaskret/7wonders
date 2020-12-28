@@ -123,7 +123,11 @@ public class Player: MonoBehaviour
             var x = wonderCardsPositions[pointsIndex].transform.position.x;
             var y = wonderCardsPositions[pointsIndex].transform.position.y;
 
+            wonder.GetComponentInChildren<SpriteRenderer>().sortingOrder = 3;
+            wonder.GetComponentInChildren<WonderCardController>().ChangeLayerWithCard();
+
             ChangeCardPosition(x, y, wonder);
+            pointsIndex++;
         }
         pointsIndex = 0;
     }
@@ -144,7 +148,7 @@ public class Player: MonoBehaviour
         return number;
     }
 
-    public int CalculateWonderCost(int index, Player opponent)
+    /*public int CalculateWonderCost(int index, Player opponent)
     {
         var wonder = WonderCards[index].GetComponent<WonderCardController>();
         var cost = wonder.cardCoinsCost;
@@ -187,5 +191,5 @@ public class Player: MonoBehaviour
         cost += (2 * (resource - playerResources)) + opponentResources;
 
         return cost;
-    }
+    }*/
 }
