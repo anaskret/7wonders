@@ -14,6 +14,7 @@ public class WonderCardController : CardModel
 
     public void WonderSelected()
     {
+        button.interactable = false;
         if (WonderSelectionTurn.PlayerTurn == 1)
         {
             playerOne.AddWonderCard(gameObject);
@@ -26,13 +27,13 @@ public class WonderCardController : CardModel
         }
     }
 
-    public void Build(Player player)
+    public void Build(Player player, GameObject card)
     {
         player.AddResources(resources);
         player.SpendCoins(CalculateCost());
         isBuilt = true;
         GameController.NumberOfWonders++;
-
+        cardUsedToBuild = card;
 
         checkmark.SetActive(true);
     }
@@ -244,7 +245,7 @@ public class WonderCardController : CardModel
 
     public override void ChangeLayerWithCard()
     {
-        var renderer = gameObject.GetComponentInChildren<Canvas>();
+        var renderer = gameObject.GetComponentInChildren<SpriteRenderer>();
 
         foreach (var canvas in costCanvases)
         {
@@ -263,6 +264,15 @@ public class WonderCardController : CardModel
         foreach (var sprite in resourceSprites)
         {
             sprite.sortingOrder = renderer.sortingOrder + 2;
+        }
+
+        if (isBuilt)
+        {
+            var sprites = checkmark.GetComponentsInChildren<SpriteRenderer>();
+            foreach(var sprite in sprites)
+            {
+                sprite.sortingOrder = renderer.sortingOrder + 2;
+            }
         }
     }
 }

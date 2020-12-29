@@ -717,9 +717,11 @@ MonoBehaviour:
   - {fileID: 3448270031036493247}
   - {fileID: 6507873915125346808}
   isWonder: 0
+  button: {fileID: 8274676551971889721}
   isBuilt: 0
   checkmark: {fileID: 8628801077788608330}
   cross: {fileID: 2241953202874746762}
+  cardUsedToBuild: {fileID: 0}
 --- !u!1 &8397464142847540844
 GameObject:
   m_ObjectHideFlags: 0

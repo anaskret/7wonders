@@ -81,7 +81,7 @@ public class CardSelectionController : MonoBehaviour
             var wonder = currentPlayer.WonderCards[index];
             var controller = wonder.GetComponent<WonderCardController>();
 
-            wonder.transform.GetComponentInChildren<Renderer>().sortingOrder = 10;
+            wonder.GetComponentInChildren<Renderer>().sortingOrder = 10;
             controller.ChangeLayerWithCard();
             text.text = controller.CalculateCost().ToString();
             index++;
@@ -124,12 +124,11 @@ public class CardSelectionController : MonoBehaviour
         card.GetComponent<CardController>().Build();
 
         GameController.Wonders.Remove(wonder);
-        controller.Build(currentPlayer);
-
-        controller.cardUsedToBuild = card;
+        controller.Build(currentPlayer, card);
 
         card.transform.position = new Vector3(100, 100);
-        
+        card.transform.localScale = new Vector3(0.95f, 1.2f);
+        card.transform.rotation *= Quaternion.Euler(0, 0, 90f);
 
         gameObject.SetActive(false);
         currentPlayer.MoveWondersToBoard();

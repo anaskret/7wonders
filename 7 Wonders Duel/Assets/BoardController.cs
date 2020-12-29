@@ -15,6 +15,9 @@ public class BoardController : MonoBehaviour
     [SerializeField] private Text papyrusText;
     [SerializeField] private Text textilesText;
 
+    [SerializeField] private GameObject[] scienceTokens;
+    [SerializeField] private GameObject[] chainingTokens;
+
     [SerializeField] private bool isPlayerOne;
     [SerializeField] private GameObject detailedBoard;
 
@@ -48,6 +51,44 @@ public class BoardController : MonoBehaviour
         glassText.text = currentPlayer.Glass.ToString();
         papyrusText.text = currentPlayer.Papyrus.ToString();
         textilesText.text = currentPlayer.Textiles.ToString();
+
+        foreach(var token in currentPlayer.ChainingTokens)
+        {
+            switch (token)
+            {
+                case 0: chainingTokens[0].SetActive(true);
+                    break;
+                case 1: chainingTokens[1].SetActive(true);
+                    break;
+                case 2: chainingTokens[2].SetActive(true);
+                    break;
+                case 3: chainingTokens[3].SetActive(true);
+                    break;
+                case 4: chainingTokens[4].SetActive(true);
+                    break;
+                case 5: chainingTokens[5].SetActive(true);
+                    break;
+            }
+        }
+
+        foreach(var token in currentPlayer.ScienceTokens)
+        {
+            switch (token)
+            {
+                case 0: scienceTokens[0].SetActive(true);
+                    break;
+                case 1: scienceTokens[1].SetActive(true);
+                    break;
+                case 2: scienceTokens[2].SetActive(true);
+                    break;
+                case 3: scienceTokens[3].SetActive(true);
+                    break;
+                case 4: scienceTokens[4].SetActive(true);
+                    break;
+                case 5: scienceTokens[5].SetActive(true);
+                    break;
+            }
+        }
     }
 
     public void ShowDetails()

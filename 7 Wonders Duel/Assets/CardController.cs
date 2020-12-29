@@ -18,8 +18,6 @@ public class CardController : CardModel
     [SerializeField] private bool isBackToFront = false;
     [SerializeField] private GameObject cardBack;
 
-    [SerializeField] private Button button; 
-
     private float startX;
     private float startY;
 
@@ -60,7 +58,6 @@ public class CardController : CardModel
         else
         {
             button.interactable = false;
-
         }
     }
 

@@ -54,6 +54,8 @@ public class CardModel : MonoBehaviour
 
     [SerializeField] protected bool isWonder;
 
+    [SerializeField] protected Button button;
+
     protected virtual void Start()
     {
         playerOne = GameObject.FindGameObjectWithTag("PlayerOne").GetComponent<Player>();
