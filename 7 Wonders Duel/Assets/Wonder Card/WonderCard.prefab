@@ -719,8 +719,12 @@ MonoBehaviour:
   isWonder: 0
   button: {fileID: 8274676551971889721}
   isBuilt: 0
+  canBeBuilt: 1
   checkmark: {fileID: 8628801077788608330}
   cross: {fileID: 2241953202874746762}
+  repeatTurnPrefab: {fileID: 7976824847472469491, guid: 7a899f59857620e448c2210e4b582f44,
+    type: 3}
+  repeatTurn: 0
   cardUsedToBuild: {fileID: 0}
 --- !u!1 &8397464142847540844
 GameObject:

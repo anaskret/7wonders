@@ -124,9 +124,11 @@ public class CardController : CardModel
         gameObject.transform.position = new Vector3(100, 100);
     }
 
-    public void Build()
+    public void Build(bool repeatTurn)
     {
-        GameController.IsPlayerOneTurn = !GameController.IsPlayerOneTurn;
+        if (!repeatTurn)
+            GameController.IsPlayerOneTurn = !GameController.IsPlayerOneTurn;
+
         isTaken = true;
 
         button.interactable = false;

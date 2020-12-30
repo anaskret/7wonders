@@ -7,6 +7,7 @@ public class CardSelectionController : MonoBehaviour
 {
     [SerializeField] private GameObject card;
     [SerializeField] private GameObject[] points;
+    [SerializeField] private GameObject[] buildButtons;
     [SerializeField] private Text buyText;
     [SerializeField] private Text sellText;
     [SerializeField] private Text[] buildWonders;
@@ -83,7 +84,16 @@ public class CardSelectionController : MonoBehaviour
 
             wonder.GetComponentInChildren<Renderer>().sortingOrder = 10;
             controller.ChangeLayerWithCard();
-            text.text = controller.CalculateCost().ToString();
+
+            if (controller.canBeBuilt && !controller.isBuilt)
+            {
+                text.text = controller.CalculateCost().ToString();
+            }
+            else if(!controller.canBeBuilt || controller.isBuilt)
+            {
+                text.text = "";
+                buildButtons[index].SetActive(false);
+            }
             index++;
         }
         index = 0;
@@ -121,7 +131,7 @@ public class CardSelectionController : MonoBehaviour
         var wonder = currentPlayer.WonderCards[index];
         var controller = wonder.GetComponent<WonderCardController>();
 
-        card.GetComponent<CardController>().Build();
+        card.GetComponent<CardController>().Build(controller.repeatTurn);
 
         GameController.Wonders.Remove(wonder);
         controller.Build(currentPlayer, card);

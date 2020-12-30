@@ -8,6 +8,7 @@ public class WonderSelectionController : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private GameObject[] newCards;
     [SerializeField] private GameObject selectionWindow;
+    [SerializeField] private GameObject background;
     [SerializeField] private GameObject selectionText;
     [SerializeField] private GameObject age1;
 
@@ -36,6 +37,7 @@ public class WonderSelectionController : MonoBehaviour
             {
                 selectionWindow.SetActive(false);
                 selectionText.SetActive(false);
+                background.SetActive(false);
                 age1.SetActive(true);
             }
         }

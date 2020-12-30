@@ -6,15 +6,32 @@ using UnityEngine.UI;
 public class WonderCardController : CardModel
 {
     public bool isBuilt;
+    public bool canBeBuilt = true;
 
     [SerializeField] private GameObject checkmark;
     [SerializeField] private GameObject cross;
+    [SerializeField] private GameObject repeatTurnPrefab;
 
+    public bool repeatTurn;
     public GameObject cardUsedToBuild;
+
+    protected override void Start()
+    {
+        base.Start();
+        GameController.Wonders.Add(gameObject);
+    }
+
+    private void Update()
+    {
+        if(GameController.NumberOfWonders == 7 && GameController.Wonders.Contains(gameObject))
+        {
+            canBeBuilt = false;
+            cross.SetActive(true);
+        }
+    }
 
     public void WonderSelected()
     {
-        button.interactable = false;
         if (WonderSelectionTurn.PlayerTurn == 1)
         {
             playerOne.AddWonderCard(gameObject);
@@ -25,6 +42,7 @@ public class WonderCardController : CardModel
             playerTwo.AddWonderCard(gameObject);
             WonderSelectionTurn.TurnChange();
         }
+        button.interactable = false;
     }
 
     public void Build(Player player, GameObject card)
@@ -32,6 +50,7 @@ public class WonderCardController : CardModel
         player.AddResources(resources);
         player.SpendCoins(CalculateCost());
         isBuilt = true;
+        canBeBuilt = false;
         GameController.NumberOfWonders++;
         cardUsedToBuild = card;
 
@@ -120,6 +139,14 @@ public class WonderCardController : CardModel
 
         foreach (var resource in resourcePositions)
         {
+            if (repeatTurn)
+            {
+                var prefab = Instantiate(repeatTurnPrefab, resource.transform.position, resource.transform.rotation);
+                prefab.transform.parent = gameObject.transform;
+
+                ChangeLayer(renderer, prefab, true);
+            }
+
             if ((scienceToken > -1 && scienceToken < 7) && !IsSetup(nameof(scienceToken)))
             {
                 var prefab = Instantiate(scienceTokenPrefab, resource.transform.position, resource.transform.rotation);
@@ -269,6 +296,14 @@ public class WonderCardController : CardModel
         if (isBuilt)
         {
             var sprites = checkmark.GetComponentsInChildren<SpriteRenderer>();
+            foreach(var sprite in sprites)
+            {
+                sprite.sortingOrder = renderer.sortingOrder + 2;
+            }
+        }
+        if (!canBeBuilt)
+        {
+            var sprites = cross.GetComponentsInChildren<SpriteRenderer>();
             foreach(var sprite in sprites)
             {
                 sprite.sortingOrder = renderer.sortingOrder + 2;
