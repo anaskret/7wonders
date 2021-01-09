@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 3108150301128268375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.021734295, y: 0.012137546, z: 1}
+  m_LocalScale: {x: 0.13013409, y: 0.0776803, z: 1}
   m_Children:
   - {fileID: 60184416884538667}
   m_Father: {fileID: 3658451567264192717}
@@ -125,7 +125,7 @@ Transform:
   m_GameObject: {fileID: 5039578122242158423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1799, y: 0.1672496, z: 1}
+  m_LocalScale: {x: 0.038584605, y: 0.038025364, z: 1}
   m_Children:
   - {fileID: 6699329362413864985}
   m_Father: {fileID: 0}
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f78a4e09b45788e4fb8483eb68aa2fe1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25a8b199d231e8849bd1729d310075f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -3303,7 +3303,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
         type: 3}
+      propertyPath: stone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
       propertyPath: isWonder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: cardTextilesCost
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8274676551971889722, guid: 67d165dba2d8657458c6ff6073a94781,
@@ -10875,6 +10885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
         type: 3}
+      propertyPath: wood
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667020593009657186, guid: 1af28d193878aa8478346bbc0215f90f,
+        type: 3}
       propertyPath: cardColor
       value: red
       objectReference: {fileID: 0}
@@ -15737,6 +15752,16 @@ PrefabInstance:
         type: 3}
       propertyPath: isWonder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: textiles
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4808690651947841996, guid: 67d165dba2d8657458c6ff6073a94781,
+        type: 3}
+      propertyPath: victoryPoints
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8274676551971889722, guid: 67d165dba2d8657458c6ff6073a94781,
         type: 3}
