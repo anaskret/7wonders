@@ -61,7 +61,7 @@ public class CardSelectionController : MonoBehaviour
         }
 
         gameObject.SetActive(true);
-        card.transform.position = new Vector3(-0.55f, 0.5929288f);
+        card.transform.position = new Vector3(-0.75f, 0.5929288f);
         card.transform.localScale = new Vector3(1.5f, 2f);
         gameObject.transform.localScale = new Vector3(0.65f, 0.55f);
         gameObject.transform.position = new Vector3(0.7544492f, 0.8872917f);

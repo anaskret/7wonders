@@ -13,10 +13,10 @@ public class CardController : CardModel
     [SerializeField] private GameObject[] coveringCards;
 
     [SerializeField] private GameObject chainingCostPositon;
-
     public bool isTaken = false;
     [SerializeField] private bool isBackToFront = false;
     [SerializeField] private GameObject cardBack;
+
 
     private float startX;
     private float startY;
@@ -27,6 +27,7 @@ public class CardController : CardModel
     private Color blue = new Color(22, 108, 159, 255)/255;
     private Color yellow = new Color(255, 225, 88, 255)/255;
     private Color green = new Color(44, 90, 20, 255)/255;
+
 
     protected override void Start()
     {
@@ -54,6 +55,7 @@ public class CardController : CardModel
         {
             button.interactable = true;
             cardBack.GetComponent<SpriteRenderer>().sortingOrder = -2;
+            ChangeResourcesState(true);
         }
         else
         {
@@ -84,7 +86,7 @@ public class CardController : CardModel
         {
             return false;
         }
-
+        player.AddDiscount(cardDiscount);
         player.AddResources(resources);
         player.SpendCoins(cost);
         player.AddCard(gameObject);
@@ -146,11 +148,6 @@ public class CardController : CardModel
     {
         var renderer = gameObject.GetComponent<SpriteRenderer>();
 
-        if (isBackToFront)
-        {
-            cardBack.GetComponent<SpriteRenderer>().sortingOrder = renderer.sortingOrder + 1;
-        }
-
         switch (cardColor)
         {
             case "grey":
@@ -173,20 +170,74 @@ public class CardController : CardModel
                 break;
         }
 
-        if (cardChainingCost > -1 && cardChainingCost < 7)
+        if (cardChainingCost > 0 && cardChainingCost < 7)
         {
             var prefab = Instantiate(textilesPrefab, chainingCostPositon.transform.position, chainingCostPositon.transform.rotation);
             prefab.transform.parent = gameObject.transform;
-            AssignCostName(nameof(cardTextilesCost));
+            AssignChainingCostName(nameof(cardTextilesCost));
             prefab.GetComponentInChildren<Text>().text = cardTextilesCost.ToString();
 
             ChangeLayer(renderer, prefab, false);
         }
-        
+
+        if ((chainingToken > 0 && chainingToken < 7) && !IsSetup(nameof(chainingToken)))
+        {
+            var prefab = Instantiate(chainingTokenPrefab, chainingTokenPosition.transform.position, chainingTokenPosition.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignChainingResourceName(nameof(chainingToken));
+            prefab.GetComponentInChildren<Text>().text = chainingToken.ToString();
+
+            ChangeLayer(renderer, prefab, true);
+        }
+
         base.CardSetup();
+
+        if (isBackToFront)
+        {
+            cardBack.GetComponent<SpriteRenderer>().sortingOrder = renderer.sortingOrder + 1;
+            ChangeResourcesState(false);
+        }
     }
 
-    
-
-    
+    private void ChangeResourcesState(bool show)
+    {
+        if (!show)
+        {
+            foreach (var canvas in costCanvases)
+            {
+                canvas.enabled = false;
+            }
+            foreach (var sprite in costSprites)
+            {
+                sprite.enabled = false;
+            }
+            foreach (var canvas in resourceCanvases)
+            {
+                canvas.enabled = false;
+            }
+            foreach (var sprite in resourceSprites)
+            {
+                sprite.enabled = false;
+            }
+        }
+        else
+        {
+            foreach (var canvas in costCanvases)
+            {
+                canvas.enabled = true;
+            }
+            foreach (var sprite in costSprites)
+            {
+                sprite.enabled = true;
+            }
+            foreach (var canvas in resourceCanvases)
+            {
+                canvas.enabled = true;
+            }
+            foreach (var sprite in resourceSprites)
+            {
+                sprite.enabled = true;
+            }
+        }
+    }
 }

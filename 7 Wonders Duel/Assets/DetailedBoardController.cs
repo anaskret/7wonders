@@ -8,8 +8,6 @@ public class DetailedBoardController : MonoBehaviour
     [SerializeField] private GameObject[] cardUsedToBuildPositions;
     [SerializeField] private GameObject[] cardPositions;
 
-
-
     Player player;
 
     public void ShowBoard(Player player)
@@ -42,7 +40,7 @@ public class DetailedBoardController : MonoBehaviour
         {
             var card = player.Cards[index];
             player.ChangeCardPosition(cardPositions[i].transform.position.x, cardPositions[i].transform.position.y, card);
-            card.transform.localScale = new Vector3(0.95f, 1.2f);
+            card.transform.localScale = new Vector3(0.7f, 1.2f);
             card.GetComponent<SpriteRenderer>().sortingOrder = 13;
             card.GetComponent<CardController>().ChangeLayerWithCard();
             index++;

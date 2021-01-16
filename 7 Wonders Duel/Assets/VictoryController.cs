@@ -22,6 +22,7 @@ public class VictoryController : MonoBehaviour
     void Update()
     {
         MilitaryVictory();
+        ScienceVictory();
     }
 
     private void MilitaryVictory()
@@ -36,6 +37,44 @@ public class VictoryController : MonoBehaviour
         {
             victoriousPlayer.text = "Player 2 won";
             victoryType.text = "Military Victory";
+            ShowVictory();
+        }
+    }
+    
+    private void ScienceVictory()
+    {
+        if (playerOne.ScienceTokens.Count == 6)
+        {
+            victoriousPlayer.text = "Player 1 won";
+            victoryType.text = "Science Victory";
+            ShowVictory();
+        }
+        else if(playerTwo.ScienceTokens.Count == 6)
+        {
+            victoriousPlayer.text = "Player 2 won";
+            victoryType.text = "Science Victory";
+            ShowVictory();
+        }
+    }
+    
+    public void PointVictory()
+    {
+        if (playerOne.VictoryPoints > playerTwo.VictoryPoints)
+        {
+            victoriousPlayer.text = "Player 1 won";
+            victoryType.text = "Point Victory";
+            ShowVictory();
+        }
+        else if(playerTwo.VictoryPoints > playerOne.VictoryPoints)
+        {
+            victoriousPlayer.text = "Player 2 won";
+            victoryType.text = "Point Victory";
+            ShowVictory();
+        }
+        else if(playerTwo.VictoryPoints == playerOne.VictoryPoints)
+        {
+            victoriousPlayer.text = "Draw";
+            victoryType.text = "";
             ShowVictory();
         }
     }

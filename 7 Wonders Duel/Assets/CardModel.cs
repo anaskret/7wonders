@@ -48,13 +48,23 @@ public class CardModel : MonoBehaviour
     protected Dictionary<string, int> resources = new Dictionary<string, int>();
 
     [SerializeField] protected GameObject[] resourcePositions;
-    [SerializeField] private GameObject chainingTokenPosition;
+    [SerializeField] protected GameObject chainingTokenPosition;
 
     [SerializeField] protected GameObject[] costPositons;
 
     [SerializeField] protected bool isWonder;
 
     [SerializeField] protected Button button;
+
+    [SerializeField] private bool woodDiscount;
+    [SerializeField] private bool oreDiscount;
+    [SerializeField] private bool clayDiscount;
+    [SerializeField] private bool stoneDiscount;
+    [SerializeField] private bool glassDiscount;
+    [SerializeField] private bool papyrusDiscount;
+    [SerializeField] private bool textilesDiscount;
+
+    protected string cardDiscount;
 
     protected virtual void Start()
     {
@@ -102,11 +112,11 @@ public class CardModel : MonoBehaviour
         {
             resources.Add(nameof(textiles), textiles);
         }
-        if (scienceToken > -1 && scienceToken < 7)
+        if (scienceToken > 0 && scienceToken < 7)
         {
             resources.Add(nameof(scienceToken), scienceToken);
         }
-        if (chainingToken > -1 && chainingToken < 7)
+        if (chainingToken > 0 && chainingToken < 7)
         {
             resources.Add(nameof(chainingToken), chainingToken);
         }
@@ -136,31 +146,80 @@ public class CardModel : MonoBehaviour
 
         if (cardWoodCost > player.Wood)
         {
-            cost += ResourceCost(cardWoodCost, player.Wood, opponent.Wood);
+            if (player.Discounts.Contains(nameof(wood)))
+            {
+                cost++;
+            }
+            else
+            {
+                cost += ResourceCost(cardWoodCost, player.Wood, opponent.Wood);
+            }
         }
         if (cardOreCost > player.Ore)
         {
-            cost += ResourceCost(cardOreCost, player.Ore, opponent.Ore);
+            if (player.Discounts.Contains(nameof(ore)))
+            {
+                cost++;
+            }
+            else
+            {
+                cost += ResourceCost(cardOreCost, player.Ore, opponent.Ore);
+            }
         }
         if (cardClayCost > player.Clay)
         {
-            cost += ResourceCost(cardClayCost, player.Clay, opponent.Clay);
+            if (player.Discounts.Contains(nameof(clay)))
+            {
+                cost++;
+            }
+            else
+            {
+                cost += ResourceCost(cardClayCost, player.Clay, opponent.Clay);
+            }
         }
         if (cardStoneCost > player.Stone)
         {
-            cost += ResourceCost(cardStoneCost, player.Stone, opponent.Stone);
+            if (player.Discounts.Contains(nameof(stone)))
+            {
+                cost++;
+            }
+            else
+            {
+                cost += ResourceCost(cardStoneCost, player.Stone, opponent.Stone);
+            }
         }
         if (cardGlassCost > player.Glass)
         {
-            cost += ResourceCost(cardClayCost, player.Clay, opponent.Clay);
+            if (player.Discounts.Contains(nameof(glass)))
+            {
+                cost++;
+            }
+            else
+            {
+                cost += ResourceCost(cardClayCost, player.Clay, opponent.Clay);
+            }
         }
         if (cardPapyrusCost > player.Papyrus)
         {
-            cost += ResourceCost(cardPapyrusCost, player.Papyrus, opponent.Papyrus);
+            if (player.Discounts.Contains(nameof(papyrus)))
+            {
+                cost++;
+            }
+            else
+            {
+                cost += ResourceCost(cardPapyrusCost, player.Papyrus, opponent.Papyrus);
+            }
         }
         if (cardTextilesCost > player.Textiles)
         {
-            cost += ResourceCost(cardTextilesCost, player.Textiles, opponent.Textiles);
+            if (player.Discounts.Contains(nameof(textiles)))
+            {
+                cost++;
+            }
+            else
+            {
+                cost += ResourceCost(cardTextilesCost, player.Textiles, opponent.Textiles);
+            }
         }
 
         return cost;
@@ -177,10 +236,12 @@ public class CardModel : MonoBehaviour
     protected string firstResource;
     protected string secondResource;
     protected string thirdResource;
+    protected string chainingResource;
 
     protected string firstCost;
     protected string secondCost;
     protected string thirdCost;
+    protected string chainingCost;
 
     protected List<Canvas> costCanvases = new List<Canvas>();
     protected List<SpriteRenderer> costSprites = new List<SpriteRenderer>();
@@ -267,20 +328,14 @@ public class CardModel : MonoBehaviour
                 ChangeLayer(renderer, prefab, false);
             }
         }
-        
 
         foreach (var resource in resourcePositions)
         {
-            if ((chainingToken > -1 && chainingToken < 7) && !IsSetup(nameof(chainingToken)))
+            if (SetupDisounts(renderer, resource))
             {
-                var prefab = Instantiate(chainingTokenPrefab, chainingTokenPosition.transform.position, chainingTokenPosition.transform.rotation);
-                prefab.transform.parent = gameObject.transform;
-                AssignResourceName(nameof(chainingToken));
-                prefab.GetComponentInChildren<Text>().text = chainingToken.ToString();
-
-                ChangeLayer(renderer, prefab, true);
+                continue;
             }
-            else if ((scienceToken > -1 && scienceToken < 7) && !IsSetup(nameof(scienceToken)))
+            else if ((scienceToken > 0 && scienceToken < 7) && !IsSetup(nameof(scienceToken)))
             {
                 var prefab = Instantiate(scienceTokenPrefab, resource.transform.position, resource.transform.rotation);
                 prefab.transform.parent = gameObject.transform;
@@ -381,14 +436,15 @@ public class CardModel : MonoBehaviour
             }
         }
     }
+
     protected bool IsSetup(string name)
     {
-        if (name == firstResource || name == secondResource || name == thirdResource)
+        if (name == firstResource || name == secondResource || name == thirdResource || name == chainingResource)
         {
             return true;
         }
 
-        if (name == firstCost || name == secondCost || name == thirdCost)
+        if (name == firstCost || name == secondCost || name == thirdCost || name == chainingCost)
         {
             return true;
         }
@@ -427,6 +483,24 @@ public class CardModel : MonoBehaviour
             thirdResource = name;
         }
     }
+    
+    protected void AssignChainingResourceName(string name)
+    {
+        if (chainingResource == null)
+        {
+            chainingResource = name;
+        }
+    }
+    
+    protected void AssignChainingCostName(string name)
+    {
+        if (chainingCost == null)
+        {
+            chainingCost = name;
+        }
+    }
+
+    
 
     protected void ChangeLayer(SpriteRenderer renderer, GameObject prefab, bool isResource)
     {
@@ -470,5 +544,95 @@ public class CardModel : MonoBehaviour
         {
             sprite.sortingOrder = renderer.sortingOrder + 1;
         }
+    }
+
+    private bool SetupDisounts(SpriteRenderer renderer, GameObject resource)
+    {
+        if (woodDiscount && !IsSetup(nameof(woodDiscount)))
+        {
+            var prefab = Instantiate(woodPrefab, resource.transform.position, resource.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignCostName(nameof(woodDiscount));
+            prefab.GetComponentInChildren<Text>().text = "";
+
+            ChangeLayer(renderer, prefab, false);
+
+            cardDiscount = "wood";
+            return true;
+        }
+        else if (oreDiscount && !IsSetup(nameof(oreDiscount)))
+        {
+            var prefab = Instantiate(orePrefab, resource.transform.position, resource.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignCostName(nameof(oreDiscount));
+            prefab.GetComponentInChildren<Text>().text = "";
+
+            ChangeLayer(renderer, prefab, false);
+
+            cardDiscount = "ore";
+            return true;
+        } 
+        else if (clayDiscount && !IsSetup(nameof(clayDiscount)))
+        {
+            var prefab = Instantiate(clayPrefab, resource.transform.position, resource.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignCostName(nameof(cardTextilesCost));
+            prefab.GetComponentInChildren<Text>().text = "";
+
+            ChangeLayer(renderer, prefab, false);
+
+            cardDiscount = "clay";
+            return true;
+        }
+        else if (stoneDiscount && !IsSetup(nameof(stoneDiscount)))
+        {
+            var prefab = Instantiate(stonePrefab, resource.transform.position, resource.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignCostName(nameof(stoneDiscount));
+            prefab.GetComponentInChildren<Text>().text = "";
+
+            ChangeLayer(renderer, prefab, false);
+
+            cardDiscount = "stone";
+            return true;
+        }
+        else if (glassDiscount && !IsSetup(nameof(glassDiscount)))
+        {
+            var prefab = Instantiate(glassPrefab, resource.transform.position, resource.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignCostName(nameof(glassDiscount));
+            prefab.GetComponentInChildren<Text>().text = "";
+
+            ChangeLayer(renderer, prefab, false);
+
+            cardDiscount = "glass";
+            return true;
+        }
+        else if (papyrusDiscount && !IsSetup(nameof(papyrusDiscount)))
+        {
+            var prefab = Instantiate(papyrusPrefab, resource.transform.position, resource.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignCostName(nameof(papyrusDiscount));
+            prefab.GetComponentInChildren<Text>().text = "";
+
+            ChangeLayer(renderer, prefab, false);
+
+            cardDiscount = "papyrus";
+            return true;
+        }
+        else if (textilesDiscount && !IsSetup(nameof(textilesDiscount)))
+        {
+            var prefab = Instantiate(textilesPrefab, resource.transform.position, resource.transform.rotation);
+            prefab.transform.parent = gameObject.transform;
+            AssignCostName(nameof(textilesDiscount));
+            prefab.GetComponentInChildren<Text>().text = "";
+
+            ChangeLayer(renderer, prefab, false);
+
+            cardDiscount = "textiles";
+            return true;
+        }
+
+        return false;
     }
 }

@@ -56,17 +56,17 @@ public class BoardController : MonoBehaviour
         {
             switch (token)
             {
-                case 0: chainingTokens[0].SetActive(true);
+                case 1: chainingTokens[0].SetActive(true);
                     break;
-                case 1: chainingTokens[1].SetActive(true);
+                case 2: chainingTokens[1].SetActive(true);
                     break;
-                case 2: chainingTokens[2].SetActive(true);
+                case 3: chainingTokens[2].SetActive(true);
                     break;
-                case 3: chainingTokens[3].SetActive(true);
+                case 4: chainingTokens[3].SetActive(true);
                     break;
-                case 4: chainingTokens[4].SetActive(true);
+                case 5: chainingTokens[4].SetActive(true);
                     break;
-                case 5: chainingTokens[5].SetActive(true);
+                case 6: chainingTokens[5].SetActive(true);
                     break;
             }
         }
@@ -75,17 +75,17 @@ public class BoardController : MonoBehaviour
         {
             switch (token)
             {
-                case 0: scienceTokens[0].SetActive(true);
+                case 1: scienceTokens[0].SetActive(true);
                     break;
-                case 1: scienceTokens[1].SetActive(true);
+                case 2: scienceTokens[1].SetActive(true);
                     break;
-                case 2: scienceTokens[2].SetActive(true);
+                case 3: scienceTokens[2].SetActive(true);
                     break;
-                case 3: scienceTokens[3].SetActive(true);
+                case 4: scienceTokens[3].SetActive(true);
                     break;
-                case 4: scienceTokens[4].SetActive(true);
+                case 5: scienceTokens[4].SetActive(true);
                     break;
-                case 5: scienceTokens[5].SetActive(true);
+                case 6: scienceTokens[5].SetActive(true);
                     break;
             }
         }

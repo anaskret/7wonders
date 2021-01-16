@@ -12,6 +12,8 @@ public class WonderSelectionController : MonoBehaviour
     [SerializeField] private GameObject selectionText;
     [SerializeField] private GameObject age1;
 
+    private bool isAgeSetUp = false;
+
     private void Update()
     {
         if (WonderSelectionTurn.PlayerTurn == 1)
@@ -33,12 +35,13 @@ public class WonderSelectionController : MonoBehaviour
                     card.SetActive(true);
                 }
             }
-            else if(WonderSelectionTurn.Round == 1)
+            else if(WonderSelectionTurn.Round == 1 && !isAgeSetUp)
             {
                 selectionWindow.SetActive(false);
                 selectionText.SetActive(false);
                 background.SetActive(false);
                 age1.SetActive(true);
+                isAgeSetUp = true;
             }
         }
     }

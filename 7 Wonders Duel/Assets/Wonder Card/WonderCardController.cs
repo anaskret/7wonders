@@ -139,15 +139,15 @@ public class WonderCardController : CardModel
 
         foreach (var resource in resourcePositions)
         {
-            if (repeatTurn)
+            if (repeatTurn && !IsSetup(nameof(repeatTurn)))
             {
                 var prefab = Instantiate(repeatTurnPrefab, resource.transform.position, resource.transform.rotation);
                 prefab.transform.parent = gameObject.transform;
+                AssignResourceName(nameof(repeatTurn));
 
                 ChangeLayer(renderer, prefab, true);
             }
-
-            if ((scienceToken > -1 && scienceToken < 7) && !IsSetup(nameof(scienceToken)))
+            else if ((scienceToken > 0 && scienceToken < 7) && !IsSetup(nameof(scienceToken)))
             {
                 var prefab = Instantiate(scienceTokenPrefab, resource.transform.position, resource.transform.rotation);
                 prefab.transform.parent = gameObject.transform;

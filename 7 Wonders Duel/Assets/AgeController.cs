@@ -6,11 +6,17 @@ public class AgeController : MonoBehaviour
 {
     [SerializeField] private GameObject[] cards;
     [SerializeField] private GameObject nextAge;
+    [SerializeField] private bool isThirdAge;
+    [SerializeField] private GameObject victoryScreen;
 
     private void Update()
     {
         if (!AreAnyCardsLeft())
         {
+            if (isThirdAge)
+            {
+                victoryScreen.GetComponent<VictoryController>().PointVictory();
+            }
             NextAge();
         }
     }
@@ -32,5 +38,6 @@ public class AgeController : MonoBehaviour
     private void NextAge()
     {
         nextAge.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
