@@ -96,6 +96,10 @@ public class CardModel : MonoBehaviour
         {
             resources.Add(nameof(ore), ore);
         }
+        if (stone > 0)
+        {
+            resources.Add(nameof(stone), stone);
+        }
         if (clay > 0)
         {
             resources.Add(nameof(clay), clay);

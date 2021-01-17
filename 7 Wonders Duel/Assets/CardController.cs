@@ -172,7 +172,7 @@ public class CardController : CardModel
 
         if (cardChainingCost > 0 && cardChainingCost < 7)
         {
-            var prefab = Instantiate(textilesPrefab, chainingCostPositon.transform.position, chainingCostPositon.transform.rotation);
+            var prefab = Instantiate(chainingTokenPrefab, chainingCostPositon.transform.position, chainingCostPositon.transform.rotation);
             prefab.transform.parent = gameObject.transform;
             AssignChainingCostName(nameof(cardTextilesCost));
             prefab.GetComponentInChildren<Text>().text = cardTextilesCost.ToString();

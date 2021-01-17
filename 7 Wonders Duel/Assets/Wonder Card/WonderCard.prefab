@@ -226,7 +226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12.9, y: -4.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2369102445811196176
@@ -718,6 +718,13 @@ MonoBehaviour:
   - {fileID: 6507873915125346808}
   isWonder: 0
   button: {fileID: 8274676551971889721}
+  woodDiscount: 0
+  oreDiscount: 0
+  clayDiscount: 0
+  stoneDiscount: 0
+  glassDiscount: 0
+  papyrusDiscount: 0
+  textilesDiscount: 0
   isBuilt: 0
   canBeBuilt: 1
   checkmark: {fileID: 8628801077788608330}
@@ -841,7 +848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12.902524, y: -4.1992183}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8974671232539378475

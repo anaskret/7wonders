@@ -31,7 +31,14 @@ public class ConflictTokenController : MonoBehaviour
 
     public void MilitaryStrengthChange()
     {
-        position += (playerOne.MilitaryStrength - playerTwo.MilitaryStrength);
+        if ((playerOne.MilitaryStrength - playerTwo.MilitaryStrength) == 0)
+        {
+            position = 8;
+        }
+        else
+        {
+            position = 8 +  (playerOne.MilitaryStrength - playerTwo.MilitaryStrength);
+        }
 
         if(position == 8 && lastPosition == 7)
         {

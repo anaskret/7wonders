@@ -42,4 +42,11 @@ public static class WonderSelectionTurn
         PlayerTurn = 2;
         Round = 1;
     }
+
+    public static void Reset()
+    {
+        PlayerTurn = 1;
+        Round = 0;
+        Index = 0;
+    }
 }

@@ -11,8 +11,20 @@ public class WonderSelectionController : MonoBehaviour
     [SerializeField] private GameObject background;
     [SerializeField] private GameObject selectionText;
     [SerializeField] private GameObject age1;
+    [SerializeField] private GameObject age2;
+    [SerializeField] private GameObject age3;
 
     private bool isAgeSetUp = false;
+
+    private void Start()
+    {
+        gameObject.SetActive(true);
+        WonderSelectionTurn.Reset();
+        GameController.Reset();
+        age1.SetActive(false);
+        age2.SetActive(false);
+        age3.SetActive(false);
+    }
 
     private void Update()
     {

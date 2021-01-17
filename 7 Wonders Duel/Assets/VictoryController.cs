@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class VictoryController : MonoBehaviour
@@ -10,6 +11,8 @@ public class VictoryController : MonoBehaviour
 
     [SerializeField] private Text victoriousPlayer;
     [SerializeField] private Text victoryType;
+    [SerializeField] private Button playAgain;
+    [SerializeField] private Button mainMenu;
 
     [SerializeField] private GameObject game;
 
@@ -88,5 +91,15 @@ public class VictoryController : MonoBehaviour
         {
             button.interactable = false;
         }
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

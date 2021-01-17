@@ -69,7 +69,7 @@ public class CardSelectionController : MonoBehaviour
         var cardRenderer = card.GetComponent<Renderer>();
         var cardController = card.GetComponent<CardController>();
         orderInLayer = cardRenderer.sortingOrder;
-        cardRenderer.sortingOrder = 10;
+        cardRenderer.sortingOrder = 11;
 
         cardController.ChangeLayerWithCard();
 
@@ -82,7 +82,7 @@ public class CardSelectionController : MonoBehaviour
             var wonder = currentPlayer.WonderCards[index];
             var controller = wonder.GetComponent<WonderCardController>();
 
-            wonder.GetComponentInChildren<Renderer>().sortingOrder = 10;
+            wonder.GetComponentInChildren<Renderer>().sortingOrder = 11;
             controller.ChangeLayerWithCard();
 
             if (controller.canBeBuilt && !controller.isBuilt)
@@ -129,19 +129,36 @@ public class CardSelectionController : MonoBehaviour
     public void WonderBuild(int index)
     {
         var wonder = currentPlayer.WonderCards[index];
+
+        if (CanBeBuilt(wonder, currentPlayer))
+        {
+            var controller = wonder.GetComponent<WonderCardController>();
+
+            card.GetComponent<CardController>().Build(controller.repeatTurn);
+
+            GameController.Wonders.Remove(wonder);
+            controller.Build(currentPlayer, card);
+
+            card.transform.position = new Vector3(100, 100);
+            card.transform.localScale = new Vector3(0.95f, 1.2f);
+            card.transform.rotation *= Quaternion.Euler(0, 0, 90f);
+
+            gameObject.SetActive(false);
+            currentPlayer.MoveWondersToBoard();
+        }
+    }
+
+    private bool CanBeBuilt(GameObject wonder, Player player)
+    {
         var controller = wonder.GetComponent<WonderCardController>();
+        var cost = controller.CalculateCost();
 
-        card.GetComponent<CardController>().Build(controller.repeatTurn);
+        if(cost > player.Coins)
+        {
+            return false;
+        }
 
-        GameController.Wonders.Remove(wonder);
-        controller.Build(currentPlayer, card);
-
-        card.transform.position = new Vector3(100, 100);
-        card.transform.localScale = new Vector3(0.95f, 1.2f);
-        card.transform.rotation *= Quaternion.Euler(0, 0, 90f);
-
-        gameObject.SetActive(false);
-        currentPlayer.MoveWondersToBoard();
+        return true;
     }
 
     public void HideWindow()

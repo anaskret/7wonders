@@ -62,7 +62,8 @@ public class Player: MonoBehaviour
                     break;
                 case "militaryStrength":
                     MilitaryStrength += resource.Value;
-                    GameObject.FindGameObjectWithTag("ConflictToken").GetComponent<ConflictTokenController>().MilitaryStrengthChange();
+                    var militaryToken = GameObject.FindGameObjectWithTag("ConflictToken").GetComponent<ConflictTokenController>();
+                    militaryToken.MilitaryStrengthChange();
                     break;
                 case "wood":
                     Wood += resource.Value;
